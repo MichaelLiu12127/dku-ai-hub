@@ -19,14 +19,14 @@ const IntroSection = () => {
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="space-y-6"
+            className="space-y-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground leading-tight">
               Discover AI-Powered Solutions for{" "}
               <span className="text-primary">Education & Research</span>
             </h2>
             
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-5 text-foreground/85 text-lg md:text-xl leading-relaxed">
               <p>
                 Duke Kunshan University provides a growing collection of AI-powered tools to support education, research, and administrative work.
               </p>

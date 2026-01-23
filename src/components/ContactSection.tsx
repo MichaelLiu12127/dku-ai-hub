@@ -27,11 +27,11 @@ const ContactSection = () => {
             <MessageCircle className="w-8 h-8 text-primary" />
           </div>
           
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
             Get in <span className="text-primary">Touch</span>
           </h2>
           
-          <p className="text-lg text-muted-foreground mb-8">
+          <p className="text-lg md:text-xl text-foreground/80 mb-10">
             For questions or support regarding DKU AI tools, please contact:
           </p>
           

@@ -39,15 +39,15 @@ const AboutSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
               About <span className="text-primary">Our Mission</span>
             </h2>
             
-            <div className="glass-card p-8 md:p-10 text-center">
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-4">
+            <div className="glass-card p-8 md:p-12 text-center">
+              <p className="text-lg md:text-xl text-foreground/85 leading-relaxed mb-5">
                 Duke Kunshan University is committed to exploring the thoughtful and responsible use of artificial intelligence.
               </p>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              <p className="text-lg md:text-xl text-foreground/85 leading-relaxed">
                 By providing access to curated AI tools, DKU aims to support innovation while maintaining strong academic values and ethical standards.
               </p>
             </div>
@@ -71,7 +71,7 @@ const AboutSection = () => {
                 <h3 className="text-lg font-semibold text-foreground mb-2">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-foreground/70 text-base">
                   {value.description}
                 </p>
               </div>

@@ -30,11 +30,11 @@ const ToolsBanner = () => {
             <span className="text-sm font-medium text-primary-foreground/80">Complete Collection</span>
           </motion.div>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 tracking-tight">
             All <span className="text-primary">AI Tools</span>
           </h1>
           
-          <p className="text-lg md:text-xl text-muted-foreground">
+          <p className="text-xl md:text-2xl text-foreground/80 font-medium">
             Explore the complete list of AI tools available at Duke Kunshan University.
           </p>
         </motion.div>
