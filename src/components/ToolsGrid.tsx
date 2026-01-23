@@ -65,14 +65,14 @@ const ToolsGrid = () => {
                 </div>
                 
                 <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-3">
+                  <div className="flex items-center gap-3 mb-4">
                     <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                       {tool.name}
                     </h3>
                     <span className="tool-tag">{tool.tag}</span>
                   </div>
                   
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <p className="text-foreground/75 text-base md:text-lg leading-relaxed mb-4">
                     {tool.description}
                   </p>
                   

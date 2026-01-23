@@ -45,13 +45,13 @@ const FAQSection = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Frequently Asked <span className="text-primary">Questions</span>
-            </h2>
-            <p className="text-muted-foreground text-lg">
-              Find answers to common questions about DKU AI Tools.
-            </p>
-          </motion.div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+            Frequently Asked <span className="text-primary">Questions</span>
+          </h2>
+          <p className="text-foreground/75 text-lg md:text-xl">
+            Find answers to common questions about DKU AI Tools.
+          </p>
+        </motion.div>
           
           {/* FAQ Accordion */}
           <motion.div
@@ -66,10 +66,10 @@ const FAQSection = () => {
                   value={`item-${index}`}
                   className="glass-card px-6 border-none"
                 >
-                  <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5 text-base md:text-lg font-medium">
+                  <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5 text-base md:text-lg font-semibold">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-5 text-base leading-relaxed">
+                  <AccordionContent className="text-foreground/80 pb-5 text-base md:text-lg leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>

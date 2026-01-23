@@ -45,9 +45,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8 leading-tight tracking-tight"
           >
             <span className="text-foreground">AI Tools at </span>
+            <br className="hidden md:block" />
             <span className="gradient-text">Duke Kunshan University</span>
           </motion.h1>
           
@@ -56,7 +57,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10"
+            className="text-xl md:text-2xl text-foreground/80 max-w-2xl mx-auto mb-12 font-medium"
           >
             Empowering teaching, learning, and research through responsible AI.
           </motion.p>

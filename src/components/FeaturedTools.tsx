@@ -63,10 +63,10 @@ const FeaturedTools = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
             Featured <span className="text-primary">AI Tools</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-foreground/75 text-lg md:text-xl max-w-2xl mx-auto">
             Explore our curated collection of AI-powered solutions designed for the DKU community.
           </p>
         </motion.div>
@@ -91,11 +91,11 @@ const FeaturedTools = () => {
                 <span className="tool-tag">{tool.tag}</span>
               </div>
               
-              <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+              <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                 {tool.name}
               </h3>
               
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              <p className="text-foreground/70 text-base leading-relaxed mb-4">
                 {tool.description}
               </p>
               

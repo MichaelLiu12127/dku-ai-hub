@@ -14,29 +14,29 @@
 @layer base {
   :root {
     /* Core Brand Colors */
-    --primary: 220 100% 30%;
+    --primary: 220 100% 45%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 151 100% 20%;
+    --secondary: 151 100% 30%;
     --secondary-foreground: 0 0% 100%;
     
     /* Backgrounds */
-    --background: 220 30% 6%;
-    --foreground: 210 20% 95%;
+    --background: 220 25% 8%;
+    --foreground: 0 0% 98%;
     
     /* Cards & Surfaces */
-    --card: 220 25% 10%;
-    --card-foreground: 210 20% 95%;
+    --card: 220 20% 12%;
+    --card-foreground: 0 0% 98%;
     
-    --popover: 220 25% 10%;
-    --popover-foreground: 210 20% 95%;
+    --popover: 220 20% 12%;
+    --popover-foreground: 0 0% 98%;
     
-    /* Muted & Subtle */
-    --muted: 220 20% 15%;
-    --muted-foreground: 215 15% 60%;
+    /* Muted & Subtle - IMPROVED CONTRAST */
+    --muted: 220 15% 18%;
+    --muted-foreground: 215 20% 75%;
     
     /* Accent */
-    --accent: 151 80% 25%;
+    --accent: 151 80% 35%;
     --accent-foreground: 0 0% 100%;
     
     /* Destructive */
@@ -44,16 +44,16 @@
     --destructive-foreground: 0 0% 100%;
     
     /* Borders & Inputs */
-    --border: 220 20% 18%;
-    --input: 220 20% 18%;
-    --ring: 220 100% 50%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 220 100% 55%;
     
     --radius: 0.75rem;
     
     /* Extended Palette */
-    --glow-primary: 220 100% 50%;
-    --glow-secondary: 151 100% 40%;
-    --surface-glass: 220 25% 12%;
+    --glow-primary: 220 100% 55%;
+    --glow-secondary: 151 100% 45%;
+    --surface-glass: 220 20% 14%;
     
     /* Sidebar */
     --sidebar-background: 220 30% 8%;
@@ -79,21 +79,24 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
   }
 }
 
 @layer components {
   /* Glass morphism card effect */
   .glass-card {
-    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+    @apply bg-card/80 backdrop-blur-xl border border-border rounded-xl;
     box-shadow: 
-      0 4px 24px -4px hsl(var(--primary) / 0.15),
-      inset 0 1px 0 0 hsl(0 0% 100% / 0.05);
+      0 4px 24px -4px hsl(var(--primary) / 0.2),
+      inset 0 1px 0 0 hsl(0 0% 100% / 0.08);
   }
   
-  /* Gradient text effect */
+  /* Gradient text effect - brighter for readability */
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(var(--primary-foreground))] via-[hsl(var(--glow-primary))] to-[hsl(var(--glow-secondary))];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(220,100%,70%)] via-[hsl(180,80%,60%)] to-[hsl(151,90%,55%)];
   }
   
   /* Primary gradient background */
@@ -176,8 +179,8 @@
   
   /* Tag/Badge styles */
   .tool-tag {
-    @apply px-3 py-1 text-xs font-medium rounded-full;
-    @apply bg-primary/20 text-primary-foreground/90 border border-primary/30;
+    @apply px-3 py-1.5 text-xs font-semibold rounded-full tracking-wide;
+    @apply bg-primary/25 text-primary-foreground border border-primary/40;
   }
 }
 
