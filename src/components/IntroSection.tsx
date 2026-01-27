@@ -61,12 +61,12 @@ const IntroSection = () => {
                 alt="AI and Education Technology"
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             </div>
             
             {/* Floating accent */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl animate-float" />
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/20 rounded-full blur-2xl animate-float" style={{ animationDelay: "3s" }} />
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/12 rounded-full blur-2xl animate-float" />
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-secondary/12 rounded-full blur-2xl animate-float" style={{ animationDelay: "3s" }} />
           </motion.div>
         </div>
       </div>

@@ -13,8 +13,8 @@ const ContactSection = () => {
       <div className="absolute inset-0 gradient-subtle" />
       
       {/* Decorative elements */}
-      <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
-      <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-1/2 left-0 w-64 h-64 bg-primary/8 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2" />
+      <div className="absolute top-1/2 right-0 w-64 h-64 bg-secondary/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       
       <div className="section-container relative z-10">
         <motion.div

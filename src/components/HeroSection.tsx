@@ -5,21 +5,21 @@ import heroBg from "@/assets/hero-bg.jpg";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
           src={heroBg}
           alt=""
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-60"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/30 to-background" />
+        <div className="absolute inset-0 grid-pattern opacity-20" />
       </div>
       
       {/* Floating decorative elements */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-pulse-glow" />
-      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
+      <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/8 rounded-full blur-3xl animate-pulse-glow" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/8 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
       
       {/* Content */}
       <div className="relative z-10 section-container text-center py-32 md:py-40">
@@ -34,10 +34,10 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/25 mb-8"
           >
             <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary-foreground/80">Powered by AI Innovation</span>
+            <span className="text-sm font-medium text-primary">Powered by AI Innovation</span>
           </motion.div>
           
           {/* Title */}
