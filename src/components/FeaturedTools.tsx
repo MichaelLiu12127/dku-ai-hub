@@ -1,35 +1,10 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { MessageSquare, BookOpen, GraduationCap, Settings, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const tools = [
-  {
-    name: "DKU AI Assistant",
-    description: "A general-purpose AI assistant for writing, brainstorming, and problem-solving.",
-    icon: MessageSquare,
-    tag: "Writing",
-  },
-  {
-    name: "AI Research Helper",
-    description: "Supports literature review, summarization, and research ideation.",
-    icon: BookOpen,
-    tag: "Research",
-  },
-  {
-    name: "Teaching & Learning AI",
-    description: "AI tools designed to enhance teaching materials and student learning.",
-    icon: GraduationCap,
-    tag: "Teaching",
-  },
-  {
-    name: "Administrative AI Tools",
-    description: "Tools that improve efficiency in university operations and workflows.",
-    icon: Settings,
-    tag: "Admin",
-  },
-];
+import { tools } from "@/data/tools";
+import { getToolIcon } from "@/components/icons/ToolIcons";
 
 const container = {
   hidden: { opacity: 0 },
@@ -78,33 +53,37 @@ const FeaturedTools = () => {
           animate={isInView ? "show" : "hidden"}
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-6"
         >
-          {tools.map((tool) => (
-            <motion.div
-              key={tool.name}
-              variants={item}
-              className="tool-card p-6 group cursor-pointer"
-            >
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
-                  <tool.icon className="w-6 h-6 text-primary" />
-                </div>
-                <span className="tool-tag">{tool.tag}</span>
-              </div>
-              
-              <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                {tool.name}
-              </h3>
-              
-              <p className="text-foreground/70 text-base leading-relaxed mb-4">
-                {tool.description}
-              </p>
-              
-              <div className="flex items-center text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                Learn more
-                <ArrowUpRight className="w-4 h-4 ml-1" />
-              </div>
-            </motion.div>
-          ))}
+          {tools.map((tool) => {
+            const IconComponent = getToolIcon(tool.id);
+            
+            return (
+              <motion.div key={tool.id} variants={item}>
+                <Link to={`/tools/${tool.slug}`}>
+                  <div className="tool-card p-6 group cursor-pointer h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                        <IconComponent size={24} />
+                      </div>
+                      <span className="tool-tag">{tool.category}</span>
+                    </div>
+                    
+                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                      {tool.name}
+                    </h3>
+                    
+                    <p className="text-foreground/70 text-base leading-relaxed mb-4">
+                      {tool.shortDescription}
+                    </p>
+                    
+                    <div className="flex items-center text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                      Learn more
+                      <ArrowUpRight className="w-4 h-4 ml-1" />
+                    </div>
+                  </div>
+                </Link>
+              </motion.div>
+            );
+          })}
         </motion.div>
         
         {/* View All Link */}
