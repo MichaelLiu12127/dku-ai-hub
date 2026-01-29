@@ -27,51 +27,49 @@ const AboutSection = () => {
   
   return (
     <section ref={ref} className="py-24 md:py-32 relative">
-      {/* Background pattern */}
-      <div className="absolute inset-0 grid-pattern opacity-15" />
-      
       <div className="section-container relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="section-title text-3xl md:text-4xl font-bold text-foreground mb-16 text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
-              About <span className="text-primary">Our Mission</span>
-            </h2>
-            
-            <div className="glass-card p-8 md:p-12 text-center">
-              <p className="text-lg md:text-xl text-foreground/85 leading-relaxed mb-5">
-                Duke Kunshan University is committed to exploring the thoughtful and responsible use of artificial intelligence.
-              </p>
-              <p className="text-lg md:text-xl text-foreground/85 leading-relaxed">
-                By providing access to curated AI tools, DKU aims to support innovation while maintaining strong academic values and ethical standards.
-              </p>
-            </div>
+            About Our Mission
+          </motion.h2>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="bg-card border border-border/50 rounded-2xl p-10 md:p-14 text-center shadow-lg mb-16"
+          >
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed mb-6">
+              Duke Kunshan University is committed to exploring the thoughtful and responsible use of artificial intelligence.
+            </p>
+            <p className="text-lg md:text-xl text-foreground/80 leading-relaxed">
+              By providing access to curated AI tools, DKU aims to support innovation while maintaining strong academic values and ethical standards.
+            </p>
           </motion.div>
           
-          {/* Values Grid */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid md:grid-cols-3 gap-6 mt-12"
+            className="grid md:grid-cols-3 gap-8"
           >
-            {values.map((value, index) => (
+            {values.map((value) => (
               <div
                 key={value.title}
-                className="text-center p-6"
+                className="text-center p-8"
               >
-                <div className="inline-flex p-4 rounded-2xl bg-primary/10 border border-primary/20 mb-4">
+                <div className="inline-flex p-5 rounded-2xl bg-primary/10 border border-primary/20 mb-6">
                   <value.icon className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-xl font-semibold text-foreground mb-3">
                   {value.title}
                 </h3>
-                <p className="text-foreground/70 text-base">
+                <p className="text-foreground/70 text-base leading-relaxed">
                   {value.description}
                 </p>
               </div>

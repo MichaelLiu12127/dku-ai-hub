@@ -15,7 +15,6 @@ const ToolBanner = ({ tool }: ToolBannerProps) => {
     <section className="pt-24 md:pt-32 pb-12 md:pb-16 relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 gradient-subtle" />
-      <div className="absolute inset-0 grid-pattern opacity-40" />
       
       <div className="section-container relative z-10">
         {/* Back Link */}
@@ -26,20 +25,20 @@ const ToolBanner = ({ tool }: ToolBannerProps) => {
         >
           <Link
             to="/tools"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-8 group"
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mb-10 group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
             <span className="text-sm font-medium">Back to Tools</span>
           </Link>
         </motion.div>
         
-        {/* Icon and Title */}
-        <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
+        {/* Icon, Title, and Description */}
+        <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="glass-card p-4 glow-primary"
+            className="p-5 rounded-2xl bg-card border border-border shadow-lg"
           >
             <IconComponent size={64} />
           </motion.div>
@@ -48,9 +47,9 @@ const ToolBanner = ({ tool }: ToolBannerProps) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
+            className="space-y-3"
           >
-            <div className="tool-tag w-fit mb-3">{tool.category}</div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
               {tool.name}
             </h1>
             <p className="text-lg md:text-xl text-foreground/80 max-w-2xl">
