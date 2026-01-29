@@ -27,16 +27,24 @@ const FeaturedTools = () => {
   
   return (
     <section ref={ref} className="py-24 md:py-32 relative">
+      {/* Background pattern */}
+      <div className="absolute inset-0 grid-pattern opacity-20" />
+      
       <div className="section-container relative z-10">
         {/* Header */}
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="section-title text-3xl md:text-4xl font-bold text-foreground mb-16 text-center"
+          className="text-center mb-16"
         >
-          Featured AI Tools
-        </motion.h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
+            Featured <span className="text-primary">AI Tools</span>
+          </h2>
+          <p className="text-foreground/75 text-lg md:text-xl max-w-2xl mx-auto">
+            Explore our curated collection of AI-powered solutions designed for the DKU community.
+          </p>
+        </motion.div>
         
         {/* Tools Grid */}
         <motion.div
@@ -51,22 +59,23 @@ const FeaturedTools = () => {
             return (
               <motion.div key={tool.id} variants={item}>
                 <Link to={`/tools/${tool.slug}`}>
-                  <div className="tool-card p-6 group cursor-pointer h-full flex flex-col">
-                    <div className="mb-6">
-                      <div className="p-4 rounded-2xl bg-primary/10 border border-primary/20 group-hover:bg-primary/15 transition-colors w-fit">
-                        <IconComponent size={32} />
+                  <div className="tool-card p-6 group cursor-pointer h-full">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="p-3 rounded-xl bg-primary/10 border border-primary/20 group-hover:bg-primary/20 transition-colors">
+                        <IconComponent size={24} />
                       </div>
+                      <span className="tool-tag">{tool.category}</span>
                     </div>
                     
-                    <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
                       {tool.name}
                     </h3>
                     
-                    <p className="text-foreground/70 text-base leading-relaxed flex-1">
+                    <p className="text-foreground/70 text-base leading-relaxed mb-4">
                       {tool.shortDescription}
                     </p>
                     
-                    <div className="flex items-center text-primary text-sm font-medium mt-4 opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex items-center text-primary text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                       Learn more
                       <ArrowUpRight className="w-4 h-4 ml-1" />
                     </div>
@@ -75,6 +84,22 @@ const FeaturedTools = () => {
               </motion.div>
             );
           })}
+        </motion.div>
+        
+        {/* View All Link */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/tools"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-primary/30 text-primary font-medium hover:bg-primary/10 transition-colors"
+          >
+            View All Tools
+            <ArrowUpRight className="w-4 h-4" />
+          </Link>
         </motion.div>
       </div>
     </section>
