@@ -30,9 +30,9 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight text-foreground"
+            className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight"
           >
-            AI Tools at Duke Kunshan University
+            <span className="gradient-text">AI Tools at Duke Kunshan University</span>
           </motion.h1>
           
           {/* Logo Row */}
