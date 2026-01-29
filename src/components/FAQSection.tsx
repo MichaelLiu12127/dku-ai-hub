@@ -33,27 +33,19 @@ const FAQSection = () => {
   
   return (
     <section ref={ref} className="py-24 md:py-32 relative overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 gradient-subtle" />
       
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto">
-          {/* Header */}
-          <motion.div
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-center mb-12"
+            className="section-title text-3xl md:text-4xl font-bold text-foreground mb-16 text-center"
           >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-5">
-            Frequently Asked <span className="text-primary">Questions</span>
-          </h2>
-          <p className="text-foreground/75 text-lg md:text-xl">
-            Find answers to common questions about DKU AI Tools.
-          </p>
-        </motion.div>
+            Frequently Asked Questions
+          </motion.h2>
           
-          {/* FAQ Accordion */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -64,12 +56,12 @@ const FAQSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="glass-card px-6 border-none"
+                  className="bg-card border border-border/50 rounded-2xl px-8 data-[state=open]:shadow-lg transition-shadow"
                 >
-                  <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-5 text-base md:text-lg font-semibold">
+                  <AccordionTrigger className="text-left text-foreground hover:text-primary hover:no-underline py-6 text-lg font-semibold">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-foreground/80 pb-5 text-base md:text-lg leading-relaxed">
+                  <AccordionContent className="text-foreground/75 pb-6 text-lg leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
