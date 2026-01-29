@@ -22,8 +22,8 @@ const Navbar = () => {
               <Sparkles className="w-8 h-8 text-primary transition-colors group-hover:text-glow-primary" />
               <div className="absolute inset-0 bg-primary/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
-            <span className="text-lg md:text-xl font-bold text-foreground">
-              DKU <span className="text-primary">AI Tools</span>
+            <span className="text-lg md:text-xl font-bold">
+              <span className="gradient-text">DKU AI Tools</span>
             </span>
           </Link>
           
