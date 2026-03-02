@@ -110,32 +110,63 @@ export const CopilotIcon = ({ className, size = 48 }: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
   >
     <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="2" fill="hsl(var(--primary) / 0.1)" />
-    {/* Visor/helmet shape */}
     <path
       d="M12 22c0-6.627 5.373-12 12-12s12 5.373 12 12v4c0 2-1 4-3 5l-9 5-9-5c-2-1-3-3-3-5v-4z"
       stroke="currentColor"
       strokeWidth="2"
       fill="hsl(var(--secondary) / 0.15)"
     />
-    {/* Eyes/visor */}
     <ellipse cx="18" cy="22" rx="3" ry="4" fill="currentColor" opacity="0.8" />
     <ellipse cx="30" cy="22" rx="3" ry="4" fill="currentColor" opacity="0.8" />
-    {/* Glare */}
     <ellipse cx="17" cy="21" rx="1" ry="1.5" fill="hsl(var(--background))" />
     <ellipse cx="29" cy="21" rx="1" ry="1.5" fill="hsl(var(--background))" />
-    {/* Wings hint */}
+    <path d="M8 26c2-2 4-3 6-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+    <path d="M40 26c-2-2-4-3-6-3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+  </svg>
+);
+
+// Microsoft Copilot-inspired icon (infinity/ribbon shape)
+export const MicrosoftCopilotIcon = ({ className, size = 48 }: IconProps) => (
+  <svg
+    viewBox="0 0 48 48"
+    width={size}
+    height={size}
+    className={cn("text-primary", className)}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="2" fill="hsl(var(--primary) / 0.08)" />
     <path
-      d="M8 26c2-2 4-3 6-3"
+      d="M14 24c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z"
       stroke="currentColor"
       strokeWidth="2"
-      strokeLinecap="round"
+      fill="hsl(var(--primary) / 0.15)"
     />
     <path
-      d="M40 26c-2-2-4-3-6-3"
+      d="M22 24c0-3.314 2.686-6 6-6s6 2.686 6 6-2.686 6-6 6-6-2.686-6-6z"
       stroke="currentColor"
       strokeWidth="2"
-      strokeLinecap="round"
+      fill="hsl(var(--secondary) / 0.15)"
     />
+    <path d="M24 14v-2M24 36v-2M16 16l-1.5-1.5M33.5 33.5L32 32M12 24h-2M38 24h-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+  </svg>
+);
+
+// Dify-inspired icon (workflow/nodes shape)
+export const DifyIcon = ({ className, size = 48 }: IconProps) => (
+  <svg
+    viewBox="0 0 48 48"
+    width={size}
+    height={size}
+    className={cn("text-primary", className)}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="24" cy="24" r="22" stroke="currentColor" strokeWidth="2" fill="hsl(var(--accent) / 0.08)" />
+    <rect x="10" y="12" width="10" height="10" rx="3" stroke="currentColor" strokeWidth="2" fill="hsl(var(--primary) / 0.15)" />
+    <rect x="28" y="12" width="10" height="10" rx="3" stroke="currentColor" strokeWidth="2" fill="hsl(var(--secondary) / 0.15)" />
+    <rect x="19" y="28" width="10" height="10" rx="3" stroke="currentColor" strokeWidth="2" fill="hsl(var(--primary) / 0.2)" />
+    <path d="M17 22v3a3 3 0 003 3h0M31 22v3a3 3 0 01-3 3h0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
@@ -145,7 +176,18 @@ export const toolIconMap: Record<string, React.FC<IconProps>> = {
   "ai-research-helper": ClaudeIcon,
   "teaching-learning-ai": GeminiIcon,
   "administrative-ai-tools": CopilotIcon,
+  "microsoft-copilot": MicrosoftCopilotIcon,
+  "dify": DifyIcon,
 };
+
+export const allHeroIcons: { id: string; icon: React.FC<IconProps>; label: string }[] = [
+  { id: "dku-ai-assistant", icon: ChatGPTIcon, label: "DKU AI Assistant" },
+  { id: "ai-research-helper", icon: ClaudeIcon, label: "AI Research Helper" },
+  { id: "teaching-learning-ai", icon: GeminiIcon, label: "Teaching & Learning AI" },
+  { id: "administrative-ai-tools", icon: CopilotIcon, label: "Administrative AI" },
+  { id: "microsoft-copilot", icon: MicrosoftCopilotIcon, label: "Microsoft Copilot" },
+  { id: "dify", icon: DifyIcon, label: "Dify" },
+];
 
 export const getToolIcon = (toolId: string): React.FC<IconProps> => {
   return toolIconMap[toolId] || ChatGPTIcon;
